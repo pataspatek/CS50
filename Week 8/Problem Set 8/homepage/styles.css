@@ -1,0 +1,97 @@
+table {
+    margin: auto;
+}
+
+tr {
+    height: 180px;
+}
+
+td {
+    width: 180px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-size: 22pt;
+}
+
+.header {
+    margin-bottom: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.card {
+    border-width: 0.5cm;
+}
+
+
+.bottom-bar {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: white;
+}
+
+.carousel-item {
+    height: 480px;
+}
+
+.col {
+    height: 15.5cm;
+    width: 25%;
+    margin: auto;
+}
+
+
+.btn {
+    margin-left: 0.2cm;
+    margin-top: 0.4cm;
+}
+
+.pexeso-card {
+    border: 3px solid blue;
+    visibility: visible;
+}
+
+.pexeso-img {
+    height: 120px;
+    width: 120px;
+}
+
+#options {
+    float: right;
+    margin-right: 1cm;
+    margin-top: 0.5cm;
+}
+
+#btn {
+    margin-left: 0.5cm;
+    margin-bottom: 0.2cm;
+}
+
+
+#carouselExampleInterval {
+    width: 40%;
+    margin: auto;
+    position: relative;
+}
+
+#move-btn {
+    background-color: gray;
+}
+
+#pong {
+    border: 0.3cm solid blue;
+    position: fixed;
+    bottom: 2cm;
+    left: 19%;
+}
+
+#accordionPanelsStayOpenExample {
+    margin-left: 8cm;
+    margin-right: 8cm;
+}
+
+#start-pexeso {
+    margin-left: 48%;
+}

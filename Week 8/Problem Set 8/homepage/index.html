@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="shortcut icon" href="assets/rocket.png">
+        <title>My Webpage</title>
+
+        <script src="script.js"></script>
+
+    </head>
+    <body>
+        <div>
+            <a class="btn btn-primary" href="index.html">Home</a>
+            <a class="btn btn-primary" href="about.html">About</a>
+            <a class="btn btn-primary" href="projects.html">Projects</a>
+            <a class="btn btn-primary" href="free-time.html">Free time</a>
+            <a class="btn btn-primary" href="pexeso.html">Pexeso</a>
+        </div>
+
+        <div id="header" class="header">
+            <h1>Hello, World!</h1>
+        </div>
+        <div id="grid" class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card h-100">
+                <img src="assets/person.png" class="card-img-top" alt="person">
+                <div class="card-body">
+                  <h5 class="card-title"><b>About me</b></h5>
+                  <p class="card-text">My name is Patrick, I am in my early twenties and I live in a small country in the heart of Europe.</p>
+                  <a class="btn btn-primary" href="about.html">Learn more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="assets/projects.jpg" class="card-img-top" alt="projects">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Projects</b></h5>
+                  <p class="card-text">As I have been programming just for a couple of months my project portfolio is not as large as I would wish but... everyone has to start somewhere.</p>
+                  <a class="btn btn-primary" href="projects.html">Learn more</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100">
+                <img src="assets/time.jpg" class="card-img-top" alt="time">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Free time</b></h5>
+                  <p class="card-text">We are all guilty of procrastionation, take a look at how I waste my time.</p><i>“I never put off till tomorrow what I can possibly do - the day after.”</i><p style="color: grey">- Oscar Wild</p>
+                  <a class="btn btn-primary" href="free-time.html">Learn more</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-bar" id="bottom-bar">
+            <input type="image" src="assets/moon.jpg" alt="darkMode" id="btn" onclick="darkMode()" width="48" height="48">
+            <p id="options" onclick="alert('You really thought that I have done the options?\nIt just looked cool to have it on the page!')" style="color: blue"><u>Options</u></p>
+          </div>
+
+
+    </body>
+</html>
