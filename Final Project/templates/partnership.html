@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Partnership
+{% endblock %}
+
+{% block header %}
+    Partnership
+{% endblock %}
+
+{% block main %}
+    {% if users_requests|length > 0 %}
+        <div class="warning-text">
+            <h1><b>Your request is being evaluated...</b></h1>
+        </div>
+    {% elif current_person[0]["status"] == "user" %}
+        <form class="row g-3" action="/partnership" method="POST">
+            <div>
+                <label class="form-label">Name<span class="red">*</span></label>
+                <input type="text" class="form-control" required autocomplete="off" name="restaurant" placeholder="Name of the restaurant" value={{ restaurant }}>
+            </div>
+            <div>
+                <label class="form-label">Description</label>
+                <input  id="description-field" type="text" class="form-control" autocomplete="off" name="description" placeholder="Description of the restaurant">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary">Apply</button>
+            </div>
+        </form>
+    {% else %}
+        <div class="warning-text">
+            <h1><b>You should not be here!!!</b></h1>
+        </div>
+    {% endif %}
+
+{% endblock %}

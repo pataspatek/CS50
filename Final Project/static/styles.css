@@ -1,0 +1,85 @@
+/* Class that changes the margins of the forms. */
+/* Used in login, register, manage forms */
+.row {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+/* Class for the navbar */
+/* Used in layout */
+.bg-light {
+    overflow: hidden;
+    background-color: #333; /* Set background color of the navbar */
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    z-index: 2;
+}
+
+/* Class specifies the position of the main content of the page */
+/* Used in layout */
+.main-content {
+    margin-top: 120px; /* Margin of the main content so it is not covered by navbar */
+}
+
+/* Class for the flash message */
+/* Used in layout */
+.alert {
+    top: 100px;
+    width: 100%;
+    z-index: 1; /* Message will be covered if .bg-light up there */
+}
+
+/* Class for the header of the pages */
+/* Used in layout */
+.header {
+    text-align: center; /* Header of every page align in the center */
+}
+
+/* Class for the color change to red */
+/* Used in register */
+.red {
+    color: red;
+}
+
+/* Class for the flush items */
+/* Used in manage */
+.accordion-item {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+/* Class for restaurant cards */
+/* Used in index */
+.restaurant-card {
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 100%;
+}
+
+/* Create shadow when hover on card */
+/* Used in index */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.24);
+}
+
+/* Show the restaraunt cards next to each other with given margin */
+/* Used in index */
+.restaurant-form {
+    float: left;
+    margin: 1.667%;
+}
+
+/*  */
+#description-field {
+    height: 100px;
+}
+
+/* If user should not be able to reach certain route */
+/* Used in partneship when request pending */
+/* Used in requests when other than admin reach the route */
+.warning-text {
+    text-align: center;
+}
+

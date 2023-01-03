@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Requests
+{% endblock %}
+
+{% block header %}
+    Requests
+{% endblock %}
+
+{% block main %}
+    {% if current_person[0]["status"] == "admin" %}
+        {% if pending|length == 0 %}
+            <div class="warning-text">
+                <h1><b>No requests</b></h1>
+            </div>
+        {% else %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Owner</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for restaurant in pending %}
+                        <tr>
+                            <th scope="row">{{ restaurant["id"]}}</th>
+                            <td>{{ restaurant["name"] }}</td>
+                            <td>{{ restaurant["description"] }}</td>
+                            <td>{{ restaurant["owner"] }}</td>
+                            <td>
+                                <form action="/requests" method="post">
+                                    <input name="restaurant" value="{{ restaurant['name'] }}" hidden>
+                                    <input name="description" value="{{ restaurant['description'] }}" hidden>
+                                    <input name="owner" value="{{ restaurant['owner'] }}" hidden>
+                                    <button class="btn btn-primary" type="submit" name="action" value="Accept">Accept</button>
+                                    <button class="btn btn-primary" type="submit" name="action" value="Decline">Decline</button>
+                                </form>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% else %}
+        <div class="warning-text">
+            <h1><b>You should not be here!!!</b></h1>
+        </div>
+    {% endif %}
+{% endblock %}

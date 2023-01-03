@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block header %}
+    Login
+{% endblock %}
+
+{% block main %}
+    <form class="row g-3" action="/login" method="POST">
+        <div>
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" required autocomplete="off" name="username" value={{ username }}>
+        </div>
+        <div>
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" required autocomplete="off" name="password" value={{ password }}>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Log in</button>
+        </div>
+    </form>
+{% endblock %}

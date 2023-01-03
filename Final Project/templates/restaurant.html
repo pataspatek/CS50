@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block header %}
+    {{ restaurant_name }}
+{% endblock %}
+
+{% block main %}
+    {% if current_person[0]["status"] == "owner" %}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td></td>
+                        <td>{{ product["name"] }}</td>
+                        <td>{{ usd(product["price"]) }}</td>
+                        <td>
+                            <form action="/restaurant" method="post">
+                                <input name="product" value="{{ product['name'] }}" hidden>
+                                <button class="btn btn-primary" type="submit" name="action" value="Delete">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+             </tbody>
+        </table>
+        <br>
+        <div>
+            <form class="row g-3" action="/restaurant" method="post">
+                <div class="col-md-4">
+                    <input autocomplete="off" class="form-control" name="product" placeholder="Product Name" type="text">
+                </div>
+                <div class="col-md-4">
+                    <input autocomplete="off" class="form-control" name="price"  placeholder="$" type="number" min="1" step="0.01">
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-primary" type="submit" name="action" value="Add">Add</button>
+                </div>
+            </form>
+        </div>
+    {% else %}
+        <div class="warning-text">
+            <h1><b>You should not be here!!!</b></h1>
+        </div>
+    {% endif %}
+{% endblock %}
