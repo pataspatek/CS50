@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block header %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form class="row g-3" action="/register" method="post">
+        <div>
+            <label class="form-label">Username<span class="red">*</span></label>
+            <input type="text" class="form-control" required autocomplete="off" name="username" value={{ username }}>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" autocomplete="off" name="name" value={{ name }}>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Surname</label>
+            <input type="text" class="form-control" autocomplete="off" name="surname" value={{ surname }}>
+        </div>
+        <div>
+            <label class="form-label">E-mail<span class="red">*</span></label>
+            <input type="email" class="form-control" required autocomplete="off" name="email" value={{ email }}>
+        </div>
+        <div>
+            <label class="form-label">Address</label>
+            <input type="text" class="form-control" autocomplete="off" name="address" value={{ address }}>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Password<span class="red">*</span></label>
+            <input type="password" class="form-control" required autocomplete="off" name="password" value={{ password }}>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Confim Password<span class="red">*</span></label>
+            <input type="password" class="form-control" required autocomplete="off" name="confirmation">
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </div>
+    </form>
+{% endblock %}

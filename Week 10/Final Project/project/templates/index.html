@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block header %}
+    Welcome
+{% endblock %}
+
+{% block main %}
+        <div class="row-cols-md-6 g-4">
+            {% for restaurant in restaurants %}
+                <form action="/" method="post" class="restaurant-form">
+                    <button class="restaurant-card" type="submit">
+                        <div class="col">
+                            <div class="card h-100">
+                                <input name="restaurant" value="{{ restaurant['name'] }}" hidden>
+                                <img src="static/restaurants/{{ restaurant['name'] }}.jpg" class="card-img-top" alt="{{ restaurant['name'] }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ restaurant["name"] }}</h5>
+                                    <p class="card-text">{{ restaurant["desription"] }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                </form>
+            {% endfor %}
+        </div>
+{% endblock %}
+
