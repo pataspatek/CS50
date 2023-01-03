@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Manage Account
+{% endblock %}
+
+{% block header %}
+    Manage Account
+{% endblock %}
+
+{% block main %}
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Deposit Money
+            </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <form action="/manage" method="post">
+                    <input autocomplete="off" class="form-control mx-auto w-auto" name="money_deposit" placeholder="$" type="number" min="1" step="0.01">
+                    <button class="btn btn-primary" type="submit" name="action" value="Deposit">Deposit</button>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Withdraw Money
+            </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <form action="/manage" method="post">
+                    <input autocomplete="off" class="form-control mx-auto w-auto" name="money_withdraw" placeholder="$" type="number" min="1" step="0.01">
+                    <button class="btn btn-primary" type="submit" name="action" value="Withdraw">Withdraw</button>
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="accordion-item">
+        <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+            Change Password
+            </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <form action="/manage" method="post">
+                    <input id="current" autocomplete="off" autofocus class="form-control mx-auto w-auto" name="current_password" placeholder="Current Password" type="password">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="new_password" placeholder="New Password" type="password">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="confirm_password" placeholder="Confirm Password" type="password">
+                    <button class="btn btn-primary" type="submit" name="action" value="Change">Change Password</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock %}

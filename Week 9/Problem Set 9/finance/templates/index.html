@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block header %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table id="portfolio">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Current Price</th>
+                <th>Value</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% set count = namespace(value = 0) %}
+            {% for stock in transactions %}
+                {% set price = lookup(stock["symbol"])["price"] %}
+                    <tr>
+                        <td>{{ stock["name"] }}</td>
+                        <td>{{ stock["symbol"] }}</td>
+                        <td>{{ stock["shares"] }}</td>
+                        <td>{{ usd(price) }}</td>
+                        <td>{{ usd(price * stock["shares"]) }}</td>
+                        <td>
+                            <form id="buy-btn" action="/" method="post">
+                                <input autocomplete="off" class="form-control mx-auto w-auto" name="symbol" value="{{ stock['symbol'] }}" type="text" hidden>
+                                <button class="btn btn-primary" type="submit" name="action" value="Buy">Buy</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="Sell">Sell</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% set count.value = count.value + price * stock["shares"] %}
+            {% endfor %}
+        </tbody>
+        <tfoot id="foot">
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th><b>Total</b></th>
+                <th>{{ usd(count.value) }}</th>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}
+
+

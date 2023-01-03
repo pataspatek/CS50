@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block header %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <table id="stock-info">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Sybmol</th>
+        </tr>
+        <tr>
+            <td>{{ name }}</td>
+            <td>{{ price | usd }}</td>
+            <td>{{ symbol }}</td>
+        </tr>
+    </table>
+{% endblock %}
+

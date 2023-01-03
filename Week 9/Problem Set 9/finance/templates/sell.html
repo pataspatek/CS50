@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block header %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        {% if symbol %}
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="symbol" type="text" style="text-transform:uppercase" value="{{ symbol }}" hidden>
+            </div>
+            <div>
+                <table id="stock-sell">
+                    <tr>
+                        <th>Name</th>
+                        <th>Shares Owned</th>
+                        <th>Symbol</th>
+                    </tr>
+                    <tr>
+                        <td>{{ name }}</td>
+                        <td>{{ shares }}</td>
+                        <td>{{ symbol }}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Number of Shares" type="number" min="1">
+            </div>
+        {% else %}
+            <div class="mb-3">
+                <select name="symbol">
+                    {% for symbol in portfolio %}
+                        <option value="{{ symbol['symbol'] }}">{{ symbol['symbol'] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Number of Shares" type="number" min="1">
+            </div>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}
