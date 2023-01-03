@@ -1,0 +1,29 @@
+sort1 uses: Bubble Sort
+
+How do you know?:
+Bubble sort has Ω(n), meaning that in the best scenario it only takes one step to go through all of the numbers.
+In this case, the best scenario is the one where the numbers are already sorted and there is no need for swaping them.
+Based on this premise the run time of sorted list of numbers will be significatnly faster than the other two (random and reversed).
+Time to run random50000 was 7.399.
+Time to run reversed50000 was 5.656.
+Time to run sorted50000 was 0.487.
+
+
+sort2 uses: Merge Sort
+
+How do you know?:
+Merge Sort has O(n log n) and Ω(n log n), meaning that the best and the worst scenario has the running time.
+This sorting method is by definition faster than Selection Sort.
+The run time of this algorythm, used to sort 50,000 lists, was always around 0.5 sec.
+After that I only needed to compare the time to the other sorting method which also has the same speed no matter the starting scenario.
+The faster one is Merge Sort.
+
+sort3 uses: Selection Sort
+
+How do you know?:
+Selection Sort has O(n2) and Ω(n2), meaning that the best and the worst scenario has the running time.
+The algorythm always has to go throught the whole list, even if the positions of the numbers stay the same.
+We also know that it is by definition slower than the Merge Sort.
+The run time of this algorythm, used to sort 50,000 lists, was always around 3 sec.
+After that I only needed to compare the time to the other sorting method which also has the same speed no matter the starting scenario.
+The slower one is Selection Sort.
