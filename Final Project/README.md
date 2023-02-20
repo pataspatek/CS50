@@ -1,6 +1,6 @@
 # CS50 Eats
 
-## Video Demo:  https://www.youtube.com/watch?v=5v1ls7vkRSY&ab_channel=PatrikP%C3%A1tek 
+### Video Demo:  https://www.youtube.com/watch?v=5v1ls7vkRSY&ab_channel=PatrikP%C3%A1tek 
 
 ## Description:
 ### Core:
